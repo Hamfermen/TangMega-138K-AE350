@@ -1,0 +1,21 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5AST-138B" pn="GW5AST-LV138PG484AC1/I0">gw5ast138b-011</Device>
+    <FileList>
+        <File path="src/ae350_demo.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_osc/gowin_osc.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll_ae350/gowin_pll_ae350.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll_ddr3/gowin_pll_ddr3.v" type="file.verilog" enable="1"/>
+        <File path="src/key_debounce.v" type="file.verilog" enable="1"/>
+        <File path="src/riscv_ae350_soc/riscv_ae350_soc.v" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/ae350_demo.cst" type="file.cst" enable="1"/>
+        <File path="src/eda_proj.cst" type="file.cst" enable="0"/>
+        <File path="src/tang_mega_138K_pins.cst" type="file.cst" enable="0"/>
+        <File path="src/tang_mega_138k-pro_pins.cst" type="file.cst" enable="0"/>
+        <File path="src/ae350_demo.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

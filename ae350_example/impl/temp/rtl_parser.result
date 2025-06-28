@@ -1,0 +1,78 @@
+[
+ {
+  "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+  "InstLine" : 3,
+  "InstName" : "ae350_demo_top",
+  "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+  "ModuleLine" : 3,
+  "ModuleName" : "ae350_demo_top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+    "InstLine" : 66,
+    "InstName" : "u_Gowin_PLL_AE350",
+    "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_pll_ae350/gowin_pll_ae350.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_PLL_AE350"
+   },
+   {
+    "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+    "InstLine" : 81,
+    "InstName" : "led_sw",
+    "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/top.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "led"
+   },
+   {
+    "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+    "InstLine" : 88,
+    "InstName" : "u_Gowin_PLL_DDR3",
+    "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_pll_ddr3/gowin_pll_ddr3.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "Gowin_PLL_DDR3"
+   },
+   {
+    "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+    "InstLine" : 109,
+    "InstName" : "u_key_debounce_ddr3",
+    "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/key_debounce.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "key_debounce"
+   },
+   {
+    "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+    "InstLine" : 120,
+    "InstName" : "u_key_debounce_ae350",
+    "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/key_debounce.v",
+    "ModuleLine" : 3,
+    "ModuleName" : "key_debounce"
+   },
+   {
+    "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+    "InstLine" : 130,
+    "InstName" : "u_RiscV_AE350_SOC_Top",
+    "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/riscv_ae350_soc/riscv_ae350_soc.v",
+    "ModuleLine" : 28864,
+    "ModuleName" : "RiscV_AE350_SOC_Top",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/riscv_ae350_soc/riscv_ae350_soc.v",
+      "InstLine" : 29275,
+      "InstName" : "u_RiscV_AE350_SOC",
+      "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/riscv_ae350_soc/riscv_ae350_soc.v",
+      "ModuleLine" : 15,
+      "ModuleName" : "RiscV_AE350_SOC"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "InstFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_osc/gowin_osc.v",
+  "InstLine" : 10,
+  "InstName" : "Gowin_OSC",
+  "ModuleFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_osc/gowin_osc.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "Gowin_OSC"
+ }
+]

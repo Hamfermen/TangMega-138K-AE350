@@ -1,0 +1,41 @@
+{
+ "Device" : "GW5AST-138B",
+ "Files" : [
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/ae350_demo.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_osc/gowin_osc.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_pll_ae350/gowin_pll_ae350.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/gowin_pll_ddr3/gowin_pll_ddr3.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/key_debounce.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/riscv_ae350_soc/riscv_ae350_soc.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/src/top.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/Gowin/Gowin_V1.9.9.03_Education_x64/Project/ae350_demo/impl/temp/rtl_parser.result",
+ "Top" : "ae350_demo_top",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_93"
+}
