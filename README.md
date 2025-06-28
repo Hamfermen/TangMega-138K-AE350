@@ -5,11 +5,11 @@
 Для начала нужно уточнить, что на плате присутствуют два USB Type-C порта, они служат для разных целей и требуют разных драйверов. Для прошивки FPGA и Risc-V нужен USB-2, который подписан как Debug.  
 Для его работы нужен драйвер FT2232H ([Ссылка на скачивание](https://ftdichip.com/drivers/d2xx-drivers/)).
 
-<img src="images/fig1.png" alt="Необходимый для прошивки Type-C порт" width="70%" height="70%">
+<img src="images/fig1.png" alt="Необходимый для прошивки Type-C порт" width="50%" height="50%">
 
 Также для успешной прошивки нужно включить свитчи на плате следующим образом:
 
-<img src="images/fig2.png" alt="Правильное включение свитчей" width="70%" height="70%">
+<img src="images/fig2.png" alt="Правильное включение свитчей" width="50%" height="50%">
 
 Также чтобы успешно прошить плату, необходимо включить ее. Питание можно подавать напрямую через USB Type-C порт или через специальный порт для питания.
 
@@ -17,11 +17,11 @@
 
 Кроме подключения питания необходимо на 2–5 секунд зажать кнопку POWER на плате.
 
-<img src="images/fig3.png" alt="Кнопка POWER" width="70%" height="70%">
+<img src="images/fig3.png" alt="Кнопка POWER" width="50%" height="50%">
 
 После чего при пустой прошивке на ПЛИС загорится светодиод POWER.
 
-<img src="images/fig4.png" alt="Светодиоды POWER, READY, DONE" width="70%" height="70%">
+<img src="images/fig4.png" alt="Светодиоды POWER, READY, DONE" width="50%" height="50%">
 
 Если этот светодиод не горит, то, скорее всего, FPGA не получает питания.
 
@@ -42,7 +42,7 @@
 Для написания прошивок для Risc-V в составе платы нужно либо скачать набор инструментов для сборки и компиляции файлов с официального GitHub AndesTech, либо получить лицензию от Gowin для AndeSight RDS.  
 Для получения лицензии на AndeSight нужно заполнить форму [по ссылке](https://www.gowinsemi.com/en/support/enquires/). Можно заполнить по образцу ниже.
 
-<img src="images/fig5.png" alt="Образец пунктов, которые нужно заполнить" width="70%" height="70%">
+<img src="images/fig5.png" alt="Образец пунктов, которые нужно заполнить" width="50%" height="50%">
 
 Все поля, кроме пустых, нужно заполнить именно так, иначе вы либо не получите лицензию, либо получите не ту. Лицензия бессрочная, но позволяет работать только с одним микроконтроллером, именно той модели, которая находится на одном кристалле с ПЛИС.  
 Ожидание ответа может доходить как минимум до 3 дней.
@@ -59,8 +59,8 @@
 
 Для начала нужно создать пустой проект в AndeSight, как показано ниже:
 
-<img src="images/fig6.png" alt="Настройки перед созданием проекта" width="70%" height="70%">
-<img src="images/fig7.png" alt="Настройки проекта" width="70%" height="70%">
+<img src="images/fig6.png" alt="Настройки перед созданием проекта" width="50%" height="50%">
+<img src="images/fig7.png" alt="Настройки проекта" width="50%" height="50%">
 
 Для успешной прошивки нужно добавить из папки `ae350_test` папку `src` в ваш пустой проект. После кликните правой кнопкой мыши по папке проекта и откройте Properties.
 
@@ -75,11 +75,11 @@
 - `${workspace_loc:/${ProjName}/src/bsp/lib}`
 - `${workspace_loc:/${ProjName}/src/demo}`
 
-<img src="images/fig8.png" alt="Добавление путей" width="70%" height="70%">
+<img src="images/fig8.png" alt="Добавление путей" width="50%" height="50%">
 
 Проще всего это сделать через кнопку `File System`, так как там можно выбрать все пути сразу, а AndeSight сам их подставит.
 
-<img src="images/fig9.png" alt="Кнопка File System" width="70%" height="70%">
+<img src="images/fig9.png" alt="Кнопка File System" width="50%" height="50%">
 
 Теперь настройте оптимизацию по пути `C/C++ Build -> Settings -> Andes C Compiler -> Optimization`. Установите следующие параметры:
 
@@ -88,32 +88,32 @@
 - Remove unused function sections (`-ffunction-sections`): Enable
 - Remove unused data sections (`-fdata-sections`): Enable
 
-<img src="images/fig10.png" alt="Оптимизация билда" width="70%" height="70%">
+<img src="images/fig10.png" alt="Оптимизация билда" width="50%" height="50%">
 
 Это поможет экономить ресурсы и улучшить отладку, хотя с настройками можно экспериментировать, так как они почти не влияют на прошивку.
 
 Также можно выставить уровень отладки по пути `C/C++ Build -> Settings -> Andes C Compiler -> Debugging`.
 
-<img src="images/fig11.png" alt="Уровень дебагинга" width="70%" height="70%">
+<img src="images/fig11.png" alt="Уровень дебагинга" width="50%" height="50%">
 
 Я выставил максимальный, вы можете выбрать любой.
 
 В `C/C++ Build -> Settings -> Andes C Compiler -> Miscellaneous` в пункт `Other flags` добавьте: `-c -fmessage-length=0 -fno-builtin -fomit-frame-pointer -fno-strict-aliasing`, а компилятор выберите `gcc`.
 
-<img src="images/fig12.png" alt="Настройки разного" width="70%" height="70%">
+<img src="images/fig12.png" alt="Настройки разного" width="50%" height="50%">
 
 Кроме настройки компилятора, нужно настроить линковщик. По пути `C/C++ Build -> Settings -> LdSaG Tool -> General` в качестве `Linker script template` укажите: `$(ANDESIGHT_ROOT)/utils/nds32_template_v5.txt`.  
 В `SaG file` укажите: `${ProjDirPath}/src/bsp/sag/ae350-ddr.sag`.
 
-<img src="images/fig13.png" alt="Настройка LdSaG" width="70%" height="70%">
+<img src="images/fig13.png" alt="Настройка LdSaG" width="50%" height="50%">
 
 Затем по пути `C/C++ Build -> Settings -> Andes C Linker -> General` в пункт `Linker Script (-T)` введите: `$(LDSAG_OUT)`. Пункт `Do not use standard start files (-nostartfiles)` должен быть включен.
 
-<img src="images/fig14.png" alt="Настройка линковщика" width="70%" height="70%">
+<img src="images/fig14.png" alt="Настройка линковщика" width="50%" height="50%">
 
 Теперь вы можете билдить проект, нажав левой кнопкой мыши по папке проекта и выбрав молоток на панели сверху.
 
-<img src="images/fig15.png" alt="Билдинг проекта" width="70%" height="70%">
+<img src="images/fig15.png" alt="Билдинг проекта" width="50%" height="50%">
 
 В демо-проекте из репозитория по умолчанию будет программа `led waterfall` и проверка памяти, где выделяется память для массивов `a` и `b`, массив `a` заполняется значениями, они копируются в `b`, выводятся через UART, а затем память очищается и освобождается.
 
@@ -144,16 +144,16 @@
 
 Перейдите в `Project -> Configuration -> Global -> General` и включите DRSM, чтобы использовать DDR3 на плате.
 
-<img src="images/fig16.png" alt="Включение DRSM" width="70%" height="70%">
+<img src="images/fig16.png" alt="Включение DRSM" width="50%" height="50%">
 
 Далее в `Place & Route` настройте пункты `Place` и `Route`, как показано ниже:
 
-<img src="images/fig17.png" alt="Настройка Place" width="70%" height="70%">
-<img src="images/fig18.png" alt="Настройка Route" width="70%" height="70%">
+<img src="images/fig17.png" alt="Настройка Place" width="50%" height="50%">
+<img src="images/fig18.png" alt="Настройка Route" width="50%" height="50%">
 
 Также переопределите некоторые пины в `Dual-Purpose Pin`. Если вы не переопределяете JTAG, настройте как на рисунке:
 
-<img src="images/fig19.png" alt="Определение пинов" width="70%" height="70%">
+<img src="images/fig19.png" alt="Определение пинов" width="50%" height="50%">
 
 ### Подключение IP Core
 
@@ -161,8 +161,8 @@
 
 При добавлении выберите, что подключить к AE350. Для проверки работоспособности достаточно добавить GPIO и UART2, как показано:
 
-<img src="images/fig20.png" alt="Подключение UART" width="70%" height="70%">
-<img src="images/fig21.png" alt="Подключение GPIO" width="70%" height="70%">
+<img src="images/fig20.png" alt="Подключение UART" width="50%" height="50%">
+<img src="images/fig21.png" alt="Подключение GPIO" width="50%" height="50%">
 
 Также добавьте PLL для преобразования частот. По пути `Hard Module -> CLOCK -> PLL_ADV` добавьте два PLL:
 
@@ -179,7 +179,7 @@
 
 Начальную страницу PLL настройте, как показано:
 
-<img src="images/fig22.png" alt="Настройка PLL" width="70%" height="70%">
+<img src="images/fig22.png" alt="Настройка PLL" width="50%" height="50%">
 
 Также рекомендую добавить следующий модуль для визуализации работы кода:
 
@@ -266,7 +266,7 @@ endmodule
 Если внимательно посмотреть на код, может показаться, что мы создаем программную копию AE350, но на самом деле GOWIN просто подключает ресурсы платы к реальному AE350. Это видно по потраченным ресурсам.  
 В `Utilization Summary` видно, что LUT и других ресурсов использовано мало, а AE350 выделен отдельным пунктом, то есть мы просто включаем микроконтроллер через прошивку ПЛИС, так как AE350 — часть ее ресурса.
 
-<img src="images/fig23.png" alt="Ресурсы, потраченные на прошивку" width="70%" height="70%">
+<img src="images/fig23.png" alt="Ресурсы, потраченные на прошивку" width="50%" height="50%">
 
 Подключая ресурсы к микроконтроллеру, вы также можете использовать их через ПЛИС, но делайте это осторожно.
 
@@ -285,8 +285,8 @@ endmodule
 
 Сначала прошейте flash прошивкой ПЛИС, затем прошивкой AE350, которая находится в папке `debug` проекта AE350. Делайте, как показано:
 
-<img src="images/fig24.png" alt="Прошивка AE350" width="70%" height="70%">
-<img src="images/fig25.png" alt="Прошивка ПЛИС" width="70%" height="70%">
+<img src="images/fig24.png" alt="Прошивка AE350" width="50%" height="50%">
+<img src="images/fig25.png" alt="Прошивка ПЛИС" width="50%" height="50%">
 
 Эти стартовые адреса взяты с официального сайта GOWIN и должны подходить для любых прошивок.
 
@@ -296,7 +296,7 @@ endmodule
 
 Чтобы стереть flash, сделайте, как показано:
 
-<img src="images/fig26.png" alt="Очистка flash" width="70%" height="70%">
+<img src="images/fig26.png" alt="Очистка flash" width="50%" height="50%">
 
 Эти прошивки не мешают заливать временные прошивки для ПЛИС в SRAM.
 
